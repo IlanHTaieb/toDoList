@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Node.Js : ToDo List</title>
+    <link rel="stylesheet" href="/assets/style/style.css" />
+</head>
+
+<body lang="fr">
+    <section>
+        <h1>Ma ToDo List</h1>
+        <ul>
+            <% 
+        if(locals.list) {
+        list.forEach( function (value, id) { %>
+            <li><a href="/delete/<%= id %>">X </a>
+                <%= value %>
+            </li>
+            <% }) } %>
+        </ul>
+
+        <form method="post" action="/add">
+            <label for="toDo">Que dois-je faire ? </label><input type="text" name="toDo" id="toDo" /><button type="submit">Valider</button>
+        </form>
+    </section>
+</body>
+
+</html>
